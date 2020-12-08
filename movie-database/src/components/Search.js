@@ -5,7 +5,7 @@ import axios from "axios";
 import Autosuggest from "react-autosuggest";
 import { Link } from "react-router-dom";
 import { URL_SEARCH, API_KEY, IMG_SIZE_XSMALL } from "./Const";
-import TMDBlogo from "./TMDBlogo";
+import TMDBlogo from "../images/TMDBlogo.svg";
 
 const getSuggestionValue = (suggestion) => {
   const newsuggest = suggestion.title;
