@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Grid, Row } from "react-bootstrap";
 import Search from "./Search";
 import axios from "axios";
-import { Grid, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import MovieCard from "./MovieCard";
 
 class PopularMovies extends Component {
   constructor(props) {
@@ -27,9 +27,9 @@ class PopularMovies extends Component {
     return (
       <div className="search">
         <Search />
-        <Grid fluid={false}>
+        <Container fluid={false}>
           <Row>{movies}</Row>
-        </Grid>
+        </Container>
       </div>
     );
   }

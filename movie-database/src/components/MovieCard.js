@@ -1,7 +1,11 @@
 import React from "react";
-import "./MovieCard.css";
+import "../css/MovieCard.css";
+import { shape, string, number } from "prop-types";
+import { Link } from "react-router-dom";
+import { Col } from "react-bootstrap";
+import styled from "styled-components";
 
-// const Wrapper = styled((link: any));
+const Wrapper = styled((Link: any));
 
 const MovieCard = (props) => (
   <Col xs={12} sm={12} md={6} lg={6}>
@@ -18,3 +22,14 @@ const MovieCard = (props) => (
     </Wrapper>
   </Col>
 );
+
+MovieCard.propTypes = {
+  movie: shape({
+    title: string.isRequired,
+    poster_path: string.isRequired,
+    overview: string.isRequired,
+    id: number.isRequired,
+  }).isRequired,
+};
+
+export default MovieCard;
