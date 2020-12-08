@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import { Navbar } from "react-bootstrap/lib";
+import _debounce from "lodash/debounce";
+import axios from "axios";
+import styled from "styled-components";
+import Autosuggest from "react-autosuggest";
+import { Link } from "react-router-dom";
+import TMDBlogo from "../images/movie_logo.svg";
+import { URL_SEARCH, API_KEY_ALT, IMG_SIZE_XSMALL } from "../const";
 
 const getSuggestionValue = (suggestion) => {
   const newsuggest = suggestion.title;
