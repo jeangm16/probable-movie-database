@@ -3,6 +3,8 @@ import "../css/App.css";
 import "./Search.js";
 import "react-modal-video/css/modal-video.min.css";
 import { Route, Switch } from "react-router-dom";
+import PopularMovies from "./PopularMovies";
+import MovieDetails from "./MovieDetails";
 
 const App = () => (
   <div>

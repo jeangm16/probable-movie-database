@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Row } from "react-bootstrap";
 import Search from "./Search";
 import axios from "axios";
+import { Grid, Row } from "react-bootstrap";
 
 class PopularMovies extends Component {
   constructor(props) {
