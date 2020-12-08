@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import MovieCard from "./MovieCard";
 import { URL_DETAIL, API_KEY } from "./Const";
+import { Row } from "react-bootstrap";
 
 class PopularMovies extends Component {
   constructor(props) {
