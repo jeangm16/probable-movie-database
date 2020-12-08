@@ -1,7 +1,7 @@
 import React from "react";
 import "./MovieCard.css";
 
-const Wrapper = styled((link: any));
+// const Wrapper = styled((link: any));
 
 const MovieCard = (props) => (
   <Col xs={12} sm={12} md={6} lg={6}>

@@ -1,8 +1,7 @@
 import React from "react";
-import "./App.css";
+import "../css/App.css";
 import "./Search.js";
 import "react-modal-video/css/modal-video.min.css";
-import "../css/style.css";
 import { Route, Switch } from "react-router-dom";
 
 const App = () => (
@@ -21,7 +20,5 @@ const App = () => (
     </Switch>
   </div>
 );
-
-export default App;
 
 export default App;

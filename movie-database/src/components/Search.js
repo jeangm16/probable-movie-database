@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { Navbar } from "react-bootstrap/lib";
+import Navbar from "react-bootstrap/Navbar";
 import _debounce from "lodash/debounce";
 import axios from "axios";
-import styled from "styled-components";
 import Autosuggest from "react-autosuggest";
 import { Link } from "react-router-dom";
-import TMDBlogo from "../images/movie_logo.svg";
-import { URL_SEARCH, API_KEY_ALT, IMG_SIZE_XSMALL } from "../const";
+import { URL_SEARCH, API_KEY, IMG_SIZE_XSMALL } from "../const";
 
 const getSuggestionValue = (suggestion) => {
   const newsuggest = suggestion.title;
@@ -51,15 +49,13 @@ class Search extends Component {
     });
   };
 
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    const url = URL_SEARCH + inputValue + API_KEY_ALT;
+    const url = URL_SEARCH + inputValue + API_KEY;
 
-    /* eslint-disable no-console */
+    // eslint-disable no-console
 
     return inputLength === 0
       ? []
@@ -79,6 +75,49 @@ class Search extends Component {
       suggestions: [],
     });
   };
-}
 
+  render() {
+    const { value, suggestions } = this.state;
+
+    // Autosuggest will pass through all these props to the input.
+    const inputProps = {
+      placeholder: "Type a Movie Title",
+      value,
+      onChange: this.onChange,
+    };
+
+    const onSuggestionsFetchRequested = _debounce((term) => {
+      this.onSuggestionsFetchRequested(term);
+    }, 1000);
+    /* eslint-disable */
+
+    return (
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#">
+              <Brand />
+              <Image
+                alt="alt image of logo"
+                src={
+                  "https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
+                }
+              />
+            </a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Navbar.Form pullRight>
+          <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            renderSuggestion={renderSuggestion}
+            inputProps={inputProps}
+          />
+        </Navbar.Form>
+      </Navbar>
+    );
+  }
+}
 export default Search;
