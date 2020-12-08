@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import Component from "react";
 import Navbar from "react-bootstrap/Navbar";
 import _debounce from "lodash/debounce";
+//Debounce allows me to “group” multiple sequential calls in a single one.
 import axios from "axios";
 import Autosuggest from "react-autosuggest";
-import { Link } from "react-router-dom";
-import { URL_SEARCH, API_KEY, IMG_SIZE_XSMALL } from "./Const";
+import Link from "react-router-dom";
+import { API_KEY, URL_SEARCH, IMG_SIZE_XSMALL } from "./Const";
 import TMDBlogo from "../images/TMDBlogo.svg";
 
 const getSuggestionValue = (suggestion) => {

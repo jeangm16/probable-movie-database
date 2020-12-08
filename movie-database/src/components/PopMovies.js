@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Search from "./Search";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import MovieCard from "./MovieCard";
+import MovieCard from "./Card";
 import { URL_DETAIL, API_KEY } from "./Const";
 import { Row } from "react-bootstrap";
 

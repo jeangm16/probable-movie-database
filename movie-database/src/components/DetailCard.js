@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
+import Component from "react";
 import styled from "styled-components";
-import { URL_IMAGE, URL_BACKGROUND } from "../const";
+import URL_BACKGROUND from "../const";
+import URL_IMAGE from "../const";
 
 class DetailMovieCard extends Component {
   componentDidUpdate() {
