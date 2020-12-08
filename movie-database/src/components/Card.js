@@ -4,7 +4,7 @@ import shape from "prop-types";
 import string from "prop-types";
 import number from "prop-types";
 import Link from "react-router-dom";
-import Col from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import styled from "styled-components";
 
 const MovieCard = (props) => (

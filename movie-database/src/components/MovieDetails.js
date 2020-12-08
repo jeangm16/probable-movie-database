@@ -1,6 +1,7 @@
 import axios from "axios";
 import Search from "./search";
-import React, { Component } from "react";
+import React from "react";
+import Component from "react";
 import { URL_DETAIL, API_KEY } from "./const.js";
 import DetailMovieCard from "./detailCard";
 

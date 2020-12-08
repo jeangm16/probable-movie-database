@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React, { Container } from "react";
 import Search from "./search";
 import axios from "axios";
-import { Container } from "react-bootstrap";
 import MovieCard from "./card";
-import { URL_DETAIL, API_KEY } from "./const";
+import { API_KEY, URL_DETAIL } from "./const";
 import { Row } from "react-bootstrap";
 
 class PopularMovies extends Component {

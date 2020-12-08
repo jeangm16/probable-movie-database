@@ -5,7 +5,7 @@ import _debounce from "lodash/debounce";
 //Debounce allows me to “group” multiple sequential calls in a single one.
 import axios from "axios";
 import Autosuggest from "react-autosuggest";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import { API_KEY, URL_SEARCH, IMG_SIZE_XSMALL } from "./const";
 import TMDBlogo from "../images/TMDBlogo.svg";
 
