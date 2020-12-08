@@ -1,11 +1,11 @@
 import React from "react";
 import "../css/App.css";
-import "./Search.js";
+import "./search.js";
 import "react-modal-video/css/modal-video.min.css";
 import Switch from "react-router-dom";
 import Route from "react-router-dom";
-import PopularMovies from "./PopMovies";
-import MovieDetails from "./MovieDetails";
+import PopularMovies from "./popMovies";
+import MovieDetails from "./movieDetails";
 
 const App = () => (
   <div>

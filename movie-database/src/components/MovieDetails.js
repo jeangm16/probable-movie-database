@@ -1,8 +1,8 @@
 import axios from "axios";
-import Search from "./Search";
+import Search from "./search";
 import React, { Component } from "react";
-import { URL_DETAIL, API_KEY } from "./Const.js";
-import DetailMovieCard from "./DetailCard";
+import { URL_DETAIL, API_KEY } from "./const.js";
+import DetailMovieCard from "./detailCard";
 
 class MovieDetails extends Component {
   constructor(props) {

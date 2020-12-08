@@ -6,7 +6,7 @@ import _debounce from "lodash/debounce";
 import axios from "axios";
 import Autosuggest from "react-autosuggest";
 import Link from "react-router-dom";
-import { API_KEY, URL_SEARCH, IMG_SIZE_XSMALL } from "./Const";
+import { API_KEY, URL_SEARCH, IMG_SIZE_XSMALL } from "./const";
 import TMDBlogo from "../images/TMDBlogo.svg";
 
 const getSuggestionValue = (suggestion) => {
