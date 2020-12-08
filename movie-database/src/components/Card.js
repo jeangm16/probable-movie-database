@@ -7,8 +7,6 @@ import Link from "react-router-dom";
 import Col from "react-bootstrap";
 import styled from "styled-components";
 
-const Wrapper = styled((Link: any));
-
 const MovieCard = (props) => (
   <Col xs={12} sm={12} md={6} lg={6}>
     <Wrapper to={`/movie/${props.movie.id}`}>
