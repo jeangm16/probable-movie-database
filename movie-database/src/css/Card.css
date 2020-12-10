@@ -1,3 +1,9 @@
-.MovieCard {
-  border-radius: 5px;
+.Wrapper {
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding-right: 10px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #fff;
+  text-decoration: none;
 }
