@@ -7,22 +7,8 @@ import Autosuggest from "react-autosuggest";
 import { Link } from "react-router-dom";
 import URL from "../const";
 import TMDBlogo from "../images/TMDBlogo.svg";
-import styled from "styled-components";
+import Brand, { Image } from "./css/search.css";
 
-const Brand = styled.span`
-  fontweight: bold;
-  texttransform: caplitalize;
-  paddingleft: 10;
-  fontsize: 1.2em;
-`;
-
-const Image = styled.img`
-  height: 100%;
-  width: auto;
-  paddingleft: 10px;
-  margintop: -8px;
-  display: inline-block;
-`;
 // When suggestion is clicked, Autosuggest needs to populate the input based on the clicked suggestion.
 
 const getSuggestionValue = (suggestion) => {

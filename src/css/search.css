@@ -1,0 +1,14 @@
+.Brand {
+  font-weight: bold;
+  transform: caplitalize;
+  padding-left: 10;
+  font-size: 1.2em;
+}
+
+.Image {
+  height: 100%;
+  width: auto;
+  padding-left: 10px;
+  margin-top: -8px;
+  display: inline-block;
+}
