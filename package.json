@@ -4,6 +4,7 @@
   "description": "ReactJs Application using Movie DB API to display most popular movies",
   "homepage": "https://github.com/jeangm16",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
