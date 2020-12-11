@@ -13,5 +13,4 @@ const renderApp = () => {
     appID
   );
 };
-
 renderApp();
