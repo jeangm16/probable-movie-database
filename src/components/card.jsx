@@ -1,4 +1,3 @@
-// @flow
 import React from "react";
 import { shape, string, number } from "prop-types";
 import styled from "styled-components";
