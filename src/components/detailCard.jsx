@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import URL from "../const.js";
-import { shape } from "prop-types";
-import TMDBlogo from "../images/TMDBlogo.svg";
-import Modal from "./modal";
+import { Glyphicon } from "react-bootstrap";
+import { shape, string, number } from "prop-types";
 import styled from "styled-components";
+import Modal from "./modal";
+import { URL_IMAGE, URL_BACKGROUND } from "../const";
+import TMDBlogo from "../images/TMDBlogo.svg";
 
 const Image = styled.img`
   width: 100%;
@@ -13,21 +14,23 @@ const Image = styled.img`
 
 class DetailMovieCard extends Component {
   componentDidUpdate() {
-    document.body.style.backgroundImage = `url(${URL.URL_BACKGROUND}${this.props.movie.backdrop_path})`;
+    document.body.style.backgroundImage = `url(${URL_BACKGROUND}${this.props.movie.backdrop_path})`;
   }
 
   render() {
+    /* eslint-disable camelcase */
+
     const {
+      poster_path,
       original_title,
       vote_average,
-      poster_path,
+      vote_count,
+      tagline,
+      overview,
       release_date,
       budget,
-      tagline,
-      vote_count,
-      overview,
-      runtime,
       revenue,
+      runtime,
     } = this.props.movie;
 
     let modalID;
@@ -43,9 +46,7 @@ class DetailMovieCard extends Component {
             <Image
               alt={`Title is ${original_title}`}
               src={
-                poster_path === "undefined"
-                  ? TMDBlogo
-                  : URL.URL_IMAGE + poster_path
+                poster_path === "undefined" ? TMDBlogo : URL_IMAGE + poster_path
               }
             />
           </div>
@@ -53,11 +54,11 @@ class DetailMovieCard extends Component {
             <h2>{original_title} </h2>
             <ul className="row item-list">
               <li className="col-m-4">
-                <span className="green item-Glyph" glyph="star" />
+                <Glyphicon className="green item-Glyph" glyph="star" />
                 {vote_average}
               </li>
               <li className="col-m-4">
-                <span className="green item-Glyph" glyph="heart" />
+                <Glyphicon className="green item-Glyph" glyph="heart" />
                 {vote_count}
               </li>
               {modalID}
@@ -95,16 +96,17 @@ class DetailMovieCard extends Component {
 
 DetailMovieCard.propTypes = {
   movie: shape({
-    original_title: String,
-    vote_average: Number,
-    backdrop_path: String,
-    release_date: String,
-    budget: Number,
-    tagline: String,
-    vote_count: Number,
-    overview: String,
-    runtime: Number,
-    revenue: Number,
+    poster_path: string,
+    original_title: string,
+    backdrop_path: string,
+    vote_average: number,
+    vote_count: number,
+    tagline: string,
+    overview: string,
+    release_date: string,
+    budget: number,
+    revenue: number,
+    runtime: number,
   }).isRequired,
 };
 

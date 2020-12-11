@@ -1,9 +1,9 @@
-import React, { Component, Container } from "react";
-import Search from "./search";
+import React, { Component } from "react";
 import axios from "axios";
+import { Grid, Row } from "react-bootstrap";
+import { URL_DETAIL, API_KEY } from "../const";
+import Search from "./search";
 import MovieCard from "./card";
-import URL from "../const";
-import { Row } from "react-bootstrap";
 
 class PopularMovies extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class PopularMovies extends Component {
   }
   componentDidMount() {
     axios
-      .get(`${URL.URL_DETAIL}popular${URL.API_KEY}&language=en-US&page=1`)
+      .get(`${URL_DETAIL}popular${API_KEY}&language=en-US&page=1`)
       .then((response) => {
         this.setState({ results: response.data.results });
       });
@@ -28,9 +28,9 @@ class PopularMovies extends Component {
     return (
       <div className="search">
         <Search />
-        <Container fluid={false}>
+        <Grid fluid={false}>
           <Row>{movies}</Row>
-        </Container>
+        </Grid>
       </div>
     );
   }

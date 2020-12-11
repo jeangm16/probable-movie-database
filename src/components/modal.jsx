@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import ModalVideo from "react-modal-video";
-import URL from "../const";
 import axios from "axios";
+import ModalVideo from "react-modal-video";
+import { Glyphicon } from "react-bootstrap";
+import { API_KEY, VIDEO_LINK } from "../const";
 
 /* eslint-disable */
 
@@ -17,7 +18,7 @@ class Modal extends Component {
 
   componentWillMount() {
     const id = this.props.modal;
-    const url = `${URL.VIDEO_LINK}${id}/videos${URL.API_KEY}`;
+    const url = `${VIDEO_LINK}${id}/videos${API_KEY}`;
     axios.get(url).then((response) => {
       this.setState({ videoID: response.data.results[0].key });
     });

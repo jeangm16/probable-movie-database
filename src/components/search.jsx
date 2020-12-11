@@ -1,15 +1,30 @@
 import React, { Component } from "react";
-import Navbar from "react-bootstrap/Navbar";
 import _debounce from "lodash/debounce";
-//Debounce allows me to “group” multiple sequential calls in a single one.
 import axios from "axios";
+import styled from "styled-components";
 import Autosuggest from "react-autosuggest";
 import { Link } from "react-router-dom";
-import URL from "../const";
+import { Navbar } from "react-bootstrap/lib";
 import TMDBlogo from "../images/TMDBlogo.svg";
-import Brand, { Image } from "../css/search.css";
+import { URL_SEARCH, API_KEY_ALT, IMG_SIZE_XSMALL } from "../const";
 
 // When suggestion is clicked, Autosuggest needs to populate the input based on the clicked suggestion.
+// Debounce allows me to “group” multiple sequential calls in a single one.
+
+const Brand = styled.span`
+  fontweight: bold;
+  texttransform: caplitalize;
+  paddingleft: 10;
+  fontsize: 1.2em;
+`;
+
+const Image = styled.img`
+  height: 100%;
+  width: auto;
+  paddingleft: 10px;
+  margintop: -8px;
+  display: inline-block;
+`;
 
 const getSuggestionValue = (suggestion) => {
   const newsuggest = suggestion.title;
@@ -26,7 +41,7 @@ const renderSuggestion = (suggestion) => (
         src={
           suggestion.poster_path === null
             ? TMDBlogo
-            : URL.IMG_SIZE_XSMALL + suggestion.poster_path
+            : IMG_SIZE_XSMALL + suggestion.poster_path
         }
       />
       <div className="searchResult-text">
@@ -54,13 +69,11 @@ class Search extends Component {
     });
   };
 
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    const url = URL.URL_SEARCH + inputValue + URL.API_KEY;
+    const url = URL_SEARCH + inputValue + API_KEY_ALT;
 
     /* eslint-disable no-console */
 
@@ -76,7 +89,6 @@ class Search extends Component {
           });
   };
 
-  // Autosuggest will call this function every time you need to clear suggestions.
   onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
@@ -86,7 +98,6 @@ class Search extends Component {
   render() {
     const { value, suggestions } = this.state;
 
-    // Autosuggest will pass through all these props to the input.
     const inputProps = {
       placeholder: "Type a Movie Title",
       value,
@@ -102,7 +113,7 @@ class Search extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">
+            <a href="/#">
               <Brand />
               <Image alt=" " src={TMDBlogo} />
             </a>

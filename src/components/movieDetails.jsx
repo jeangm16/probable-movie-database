@@ -1,8 +1,10 @@
-import axios from "axios";
-import Search from "./search";
 import React, { Component } from "react";
-import URL from "../const.js";
+import axios from "axios";
+import { URL_DETAIL, API_KEY } from "../const";
 import DetailMovieCard from "./detailCard";
+import Search from "./search";
+
+/* eslint-disable */
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class MovieDetails extends Component {
     const { id } = this.props.match.params;
 
     axios
-      .get(`${URL.URL_DETAIL}${id}${URL.API_KEY}&language=en-US&page=1`)
+      .get(`${URL_DETAIL}${id}${API_KEY}&language=en-US&page=1`)
       .then((response) => {
         this.setState({ movieData: response.data });
       });

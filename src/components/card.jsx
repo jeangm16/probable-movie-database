@@ -1,7 +1,19 @@
+// @flow
 import React from "react";
 import { shape, string, number } from "prop-types";
+import styled from "styled-components";
 import { Col } from "react-bootstrap";
-import Wrapper from "../css/card.css";
+import { Link } from "react-router-dom";
+
+const Wrapper = styled((Link: any))`
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding-right: 10px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #fff;
+  text-decoration: none;
+`;
 
 const MovieCard = (props) => (
   <Col xs={12} sm={12} md={6} lg={6}>
