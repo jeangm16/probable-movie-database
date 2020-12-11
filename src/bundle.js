@@ -1,7 +1,7 @@
-const bundle = require("bundle-js");
+// const bundle = require("bundle-js");
 
-// one pass
-bundle("index.jsx").then((result) => {
-  result.code;
-  result.map;
-});
+// // one pass
+// bundle("index.jsx").then((result) => {
+//   result.code;
+//   result.map;
+// });
