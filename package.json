@@ -1,8 +1,8 @@
 {
   "name": "movie_database",
-  "version": "1.0.0",
-  "description": "ReactJs Application using Movie DB API to display most popular movies",
-  "homepage": "https://github.com/jeangm16",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://github.com/jeangm16/probable-movie-database",
   "main": "index.js",
   "scripts": {
     "build": "react-scripts build",
