@@ -1,6 +1,6 @@
 .Brand {
   font-weight: bold;
-  transform: caplitalize;
+  /* transform: caplitalize; */
   padding-left: 10;
   font-size: 1.2em;
 }

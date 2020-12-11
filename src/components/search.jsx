@@ -7,7 +7,7 @@ import Autosuggest from "react-autosuggest";
 import { Link } from "react-router-dom";
 import URL from "../const";
 import TMDBlogo from "../images/TMDBlogo.svg";
-import Brand, { Image } from "./css/search.css";
+import Brand, { Image } from "../css/search.css";
 
 // When suggestion is clicked, Autosuggest needs to populate the input based on the clicked suggestion.
 
