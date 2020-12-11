@@ -1,9 +1,9 @@
 import React from "react";
-import "../css/app.css";
-import "react-modal-video/css/modal-video.min.css";
 import { Route, Switch } from "react-router-dom";
-import PopularMovies from "./popMovies";
-import MovieDetails from "./movieDetails";
+import "react-modal-video/css/modal-video.min.css";
+import PopularMovies from "./PopularMovies";
+import MovieDetails from "./MovieDetails";
+import "../css/style.css";
 
 const App = () => (
   <div>
