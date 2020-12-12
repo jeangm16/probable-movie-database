@@ -2,7 +2,11 @@
 
 this is the final project
 
-![Movie DataBase](/Users/john/Desktop/reactMovieDB-master/src/images/movie-database2.gif)
+![Movie DataBase](/Users/john/Desktop/reactMovieDB-master/src/images/movie-database.gif)
+
+# Search Function
+
+![Search Function]()
 
 # To Run App Offline on Local Host
 
